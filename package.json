@@ -6,7 +6,7 @@
   "homepage": "http://Barry-2020.github.io/3EnRaya",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
