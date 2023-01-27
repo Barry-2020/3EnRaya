@@ -1,0 +1,44 @@
+h1{
+    color: rebeccapurple;
+}
+.tablero{
+    /* background-color: aqua; */
+    width: auto;
+    /* width: 100px; */
+    /* box-sizing: border-box;
+    border-color: black;
+    border-style: solid; */
+    /*
+    border-width: 1px; 
+    */
+}
+.cuadrado{
+    background: #fff;
+    border: 1px solid black;
+    /* float: left; */
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
+}
+.fila1{
+    /* background-color: rgb(15, 246, 215); */
+    display: flex;
+}
+.fila2{
+    /* background-color: rgb(23, 15, 246); */
+    display: flex;
+}
+.fila3{
+    /* background-color: rgb(246, 15, 57); */
+    display: flex;
+}
+.cuadrado:disabled{
+    background-color: rgb(226, 226, 226);
+    color: black;
+}
