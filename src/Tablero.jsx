@@ -71,13 +71,13 @@ export const Tablero = () => {
         }
         if (count == 0) {
             alert('EMPATE');
-            window.location = '/';
+            location.reload();
         }
 
         if (revisionGanador(ganador, jugador.numero)) {
             winner = true;
             alert('GANO EL JUGADOR '+ jugador.numero);
-            window.location = '/';
+            location.reload();
 
         }else{
             if (jugador.bool) {
