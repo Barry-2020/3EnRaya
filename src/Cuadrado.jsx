@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const Cuadrado = ({x, y, ganador, setGanador, figura, setFigura, winner}) => {
+export const Cuadrado = ({x, y, ganador, setGanador, figura, setFigura}) => {
 
     const [asd, setAsd] = useState();
     const [mostrar, setMostrar] = useState(false);

@@ -36,6 +36,18 @@ export const Tablero = () => {
             console.log('GANADOR JUGADOR: '+ jugador);
             return true;
         }
+        if (ganador[0][0]==jugador && ganador[1][0]==jugador && ganador[2][0]==jugador) {
+            console.log('GANADOR JUGADOR: '+ jugador);
+            return true;
+        }
+        if (ganador[0][1]==jugador && ganador[1][1]==jugador && ganador[2][1]==jugador) {
+            console.log('GANADOR JUGADOR: '+ jugador);
+            return true;
+        }
+        if (ganador[0][2]==jugador && ganador[1][2]==jugador && ganador[2][2]==jugador) {
+            console.log('GANADOR JUGADOR: '+ jugador);
+            return true;
+        }
         if (ganador[0][0]==jugador && ganador[1][1]==jugador && ganador[2][2]==jugador) {
             console.log('GANADOR JUGADOR: '+ jugador);
             return true;
@@ -48,9 +60,23 @@ export const Tablero = () => {
     }
 
     useEffect( () => {
+
+        let count = 0;
+        for (let i = 0; i < ganador.length; i++) {
+            for (let j = 0; j < ganador.length; j++) {
+                if (ganador[i][j]=='0') {
+                    count++;
+                }
+            }
+        }
+        if (count == 0) {
+            alert('EMPATE');
+            window.location = '/';
+        }
+
         if (revisionGanador(ganador, jugador.numero)) {
             winner = true;
-            alert('Gano el jugador '+ jugador.numero);
+            alert('GANO EL JUGADOR '+ jugador.numero);
             window.location = '/';
 
         }else{
@@ -70,8 +96,9 @@ export const Tablero = () => {
     }, [figura]); //Dependencias por la que se debe re-renderizar
 
     return(
+        <>
+        <h2>TURNO de Jugador {jugador.numero}</h2>
         <div className="tablero">
-            <h2>TURNO de Jugador {jugador.numero}</h2>
             <div className="fila1">
                 <Cuadrado x={0} y={0} ganador={ganador} setGanador={setGanador} figura={figura} setFigura={setFigura} winner={winner}/>
                 <Cuadrado x={0} y={1} ganador={ganador} setGanador={setGanador} figura={figura} setFigura={setFigura} winner={winner}/>
@@ -87,9 +114,9 @@ export const Tablero = () => {
                 <Cuadrado x={2} y={1} ganador={ganador} setGanador={setGanador} figura={figura} setFigura={setFigura}/>
                 <Cuadrado x={2} y={2} ganador={ganador} setGanador={setGanador} figura={figura} setFigura={setFigura}/>
             </div>
-            <pre>
-                {JSON.stringify(figura)}
-            </pre>
         </div>
+        <p>Jugador 1: <b>X</b></p>
+        <p>Jugador 2: <b>O</b></p>
+        </>
     );
 }
